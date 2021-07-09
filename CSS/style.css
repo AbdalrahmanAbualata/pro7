@@ -1,10 +1,10 @@
 #closet {
   /* border: solid tomato;  */
-  height: 1000px;
+  
   position: relative;
 }
 
-#shirrt {
+.shirrt {
   /* border: solid tomato; */
   width: 400px;
   height: 450px;
@@ -13,12 +13,23 @@
   position: absolute;
 }
 
+
 .icon {
   position: absolute;
   /* border: solid tomato;  */
   /* display: inline-block; */
-  width: 100px;
-  height: 100px;
-  top: 11rem;
-  left: 34rem;
+  width: 140px;
+  height: 110px;
+  top: 12rem;
+  left: 33.3rem;}
+
+#changeColor{
+  float: right;
+  margin-right: 35%;
+  margin-top: 200px;
+}
+#changeColor .circle{
+ box-shadow: rgb(100, 100, 97) 3px 3px ;
+  background-color: rgb(199, 199, 199);
+  border-radius: 67px;
 }

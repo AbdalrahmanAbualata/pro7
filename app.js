@@ -1,6 +1,6 @@
-let img = document.getElementById("ob");
+let imgContainer = document.getElementById("ob");
 
-let imgFile = ["ballon.png", "bekind.png", "pizza.png"];
+let imgFile = ["ballon.png", "bekind.png", "pizza.png","ltcu.jpg"];
 let imgs = [];
 
 function Img(name) {
@@ -14,28 +14,32 @@ for (let i = 0; i < imgFile.length; i++) {
   new Img(imgFile[i]);
 }
 
-// console.log(imgs);
-
+let imgEl;
 function render() {
   for (let i = 0; i < imgs.length; i++) {
     let imgEl = document.createElement("img");
     imgEl.setAttribute("src", "images/" + imgs[i].filePath);
     imgEl.setAttribute("class", "item");
     imgEl.setAttribute("width", "100px");
-    imgEl.setAttribute("id", imgs[i].imgName);
+    imgEl.setAttribute("id", i);
 
-    img.appendChild(imgEl);
+    imgContainer.appendChild(imgEl);
   }
+  
 }
-
 render();
 
-let imgEl = document.querySelector(".item");
+console.log(imgContainer);
+// let imgEl = document.querySelector(".item");
+imgContainer.addEventListener("click", goToCstmPage);
 
-function goToCstmPage() {
-  console.log("clicked");
-  let codedData = JSON.stringify(imgs[0].filePath);
+function goToCstmPage(event) {
+console.log(event.target.id);
+  let imgIndex = event.target.id
+  let codedData = JSON.stringify(imgs[imgIndex].filePath);
   localStorage.setItem("data", codedData);
+  window.location.href = "http://127.0.0.1:5500/shirt.html";
+ 
 }
 
-imgEl.onclick = goToCstmPage;
+
