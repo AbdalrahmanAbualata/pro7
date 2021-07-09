@@ -38,7 +38,7 @@ console.log(event.target.id);
   let imgIndex = event.target.id
   let codedData = JSON.stringify(imgs[imgIndex].filePath);
   localStorage.setItem("data", codedData);
-  window.location.href = "https://abdalrahmanabualata.github.io/pro7/shirt";
+  window.location.href = "https://abdalrahmanabualata.github.io/pro7/shirt.html";
  
 }
 
