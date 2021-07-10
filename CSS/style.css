@@ -27,20 +27,56 @@ html{
   left: 32.8rem;}
 
 #changeColor{
+  
   float: right;
   margin-right: 8%;
   margin-top: 160px;
 }
 #changeColor .circle{
   border: rgb(171, 201, 202) 1px solid;
- box-shadow: rgb(100, 100, 97) 1px 1px ;
+ box-shadow: rgb(100, 100, 97) 0px 3px 3px ;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
-  margin:3px;
-  width: 39px;
+  padding: 1px;
+  margin: 2px;
+  width: 37px;
+  height: 22px;
+  /* z-index:1;
+  position: relative; */
 }
 .circle:hover{
   background-image: linear-gradient( 
-    300deg
-     , #8a8484 0%, #697eb3 74%);
+    270deg
+     , #4261eb5e 0%, #7b808b56 74%);
+     transform: scale(1.2);
+  transition: 0.2s;
+}
+#submit{
+  float: right;
+  margin-right: -73%;
+  margin-top: 256px;
+}
+#icons{
+  float: right;
+  margin-right: 75%;
+  margin-top: -27px;
+  
+}
+#icons img {
+
+  border: rgb(171, 201, 202) 1px solid;
+  box-shadow: rgb(100, 100, 97) 0px 3px 3px ;
+   background-color: rgb(255, 255, 255);
+   border-radius: 10px;
+   padding: 1px;
+   margin: 2px;
+   width: 50px;
+   height: 50px;
+}
+#icons img:hover{
+  background-image: linear-gradient( 
+    270deg
+     , #4261eb5e 0%, #7b808b56 74%);
+     transform: scale(1.2);
+  transition: 0.2s;
 }
