@@ -4,21 +4,22 @@ let changeColorContainer =document.getElementById('changeColor');
 let iconPlace = document.getElementById("shirrt");
 let iconsContenierEl=document.getElementById("icons")
 let icons=["ballon.png", "bekind.png", "pizza.png", "ltcu.jpg", 'grunge.png', 'Etcher.png','logo.jpg','logo2.jpeg','a123 .png']; 
-// let  iconImg;
+let  iconImg;
 let  newIcon;
 let tsColorInLlocal ;
 localStorage.setItem("tsColor", '2.png');
 
 function placeIcon() {
-let iconImg = JSON.parse(localStorage.getItem('clickedicon')) || [];
-     newIcon = document.createElement("img");
+    iconImg = JSON.parse(localStorage.getItem('clickedicon')) || [];
+    newIcon = document.createElement("img");
     newIcon.setAttribute("src", "images/" + iconImg);
     newIcon.setAttribute("class", "icon");
 
     imgContainerEl.appendChild(newIcon);
-  }
-  
+  } 
 placeIcon();
+
+
 let imgs=[];
 let tsColor=[];
 for (let i = 2; i < 15; i++) {
