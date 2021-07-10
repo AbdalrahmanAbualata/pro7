@@ -1,6 +1,6 @@
 let imgContainer = document.getElementById("ob");
 
-let imgFile = ["ballon.png", "bekind.png", "pizza.png","ltcu.jpg"];
+let imgFile = ["ballon.png", "bekind.png", "pizza.png","ltcu.jpg",'grunge.png','Etcher.png'];
 let imgs = [];
 
 function Img(name) {

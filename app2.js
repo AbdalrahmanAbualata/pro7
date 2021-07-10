@@ -14,20 +14,25 @@ function placeIcon() {
 
 placeIcon();
 
-let imgs=['circle-32.jpg','circle-32 (1).jpg','whit.gif','y.jpg']
-let tsColor=['redts.png','t-shirt-500x500.jpg','tshirt_PNG5429.png','yt.jpg']
+let imgs=[];
+let tsColor=[];
+for (let i = 2; i < 15; i++) {
+  imgs.push(`${i}.png`);
+  tsColor.push(`${i}.png`);
+}
+console.log(tsColor);
 let imgEl;
 
 function render() {
   for (let i = 0; i < imgs.length; i++) {
     // liEl = document.createElement("li");
-    imgEl = document.createElement("img");
-    imgEl.setAttribute("src", "images/" + imgs[i]);
-    imgEl.setAttribute("class", "circle");
-    imgEl.setAttribute("width", "40px");
-    imgEl.setAttribute("id", i);
+    imgEl2 = document.createElement("img");
+    imgEl2.setAttribute("src", "images/" + imgs[i]);
+    imgEl2.setAttribute("class", "circle");
+    imgEl2.setAttribute("width", "40px");
+    imgEl2.setAttribute("id", i);
     // liEl.appendChild(imgEl);
-    changeColorContainer.appendChild(imgEl);
+    changeColorContainer.appendChild(imgEl2);
     
   }
 }
@@ -41,7 +46,6 @@ changeColorContainer.addEventListener("click", changeColor);
 function changeColor (event){
   
   let ColorIndex = event.target.id ;
-  console.log(event.target.id);
   imgContainerEl.textContent='';
   imgTsEl = document.createElement("img");
   imgTsEl.setAttribute('class','shirrt')
