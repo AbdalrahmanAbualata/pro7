@@ -3,13 +3,14 @@ let imgContainerEl = document.getElementById("closet");
 let changeColorContainer =document.getElementById('changeColor');
 let iconPlace = document.getElementById("shirrt");
 let iconsContenierEl=document.getElementById("icons")
-let icons ;
+let icons=["ballon.png", "bekind.png", "pizza.png", "ltcu.jpg", 'grunge.png', 'Etcher.png']; 
 let  iconImg;
 let  newIcon;
+let tsColorInLlocal ;
+localStorage.setItem("tsColor", '2.png');
+
 function placeIcon() {
-  console.log(iconImg);
  iconImg = JSON.parse(localStorage.getItem('clickedicon')) || [];
- icons = JSON.parse(localStorage.getItem('icons')) || [];
      newIcon = document.createElement("img");
     newIcon.setAttribute("src", "images/" + iconImg);
     newIcon.setAttribute("class", "icon");
@@ -18,14 +19,13 @@ function placeIcon() {
   }
   
 placeIcon();
-
 let imgs=[];
 let tsColor=[];
 for (let i = 2; i < 15; i++) {
   imgs.push(`${i}a.jpg`);
   tsColor.push(`${i}.png`);
 }
-console.log(tsColor);
+// console.log(tsColor);
 let imgEl2;
 
 function render(lengTh,imgFile,contenerName,changeClass) {
@@ -41,7 +41,7 @@ function render(lengTh,imgFile,contenerName,changeClass) {
     
   }
 }
-console.log(icons);
+// console.log(icons);
 render(imgs.length,imgs,changeColorContainer,'circle');
 render(icons.length,icons,iconsContenierEl,'icons');
 
@@ -58,7 +58,7 @@ function changeColor (event){
   imgTsEl.setAttribute("src", "images/"+tsColor[ColorIndex]);
   imgContainerEl.appendChild(imgTsEl);
 
-  let tsColorInLlocal = JSON.stringify(tsColor[ColorIndex]);
+  tsColorInLlocal = JSON.stringify(tsColor[ColorIndex]);
   localStorage.setItem("tsColor", tsColorInLlocal);
 
   placeIcon();
@@ -74,38 +74,60 @@ function changIcon(event){
 }
 
 // *****************************************************************************************
+let btnEl=document.getElementById('submit');
 
-const Cart = function(items) {
-  this.items = items;
+
+const Tshirt = function(design) {
+  this.design = design;
 };
 
-Cart.prototype.addItem = function(product, quantity) {
+const tshirt = new Tshirt([]);
 
-  const newCartItem = new CartItem(product, quantity);
-  cart.items.push(newCartItem );
+Tshirt.prototype.addTshirt = function(tsColor,icon, quantity) {
+
+  const newTshirt= new NewTshirtItem(tsColor,icon, quantity);
+  tshirt.design.push(newTshirt );
 
 };
 
+const NewTshirtItem = function(tsColor,icon, quantity) {
+  this.tsColor = tsColor;
+  this.icon = icon;
+  this.quantity=quantity;
+};
 
-Cart.prototype.saveToLocalStorage = function() {
+let formEl=document.getElementById('catalog');
+formEl.addEventListener('submit',  addTshirtToCart);
+
+  //  btnEl.addEventListener('click', addTshirtToCart);
+function addTshirtToCart (event){
+  event.preventDefault();
+ let quantity=event.target.quantity.value ;
+  tsColorInLlocal = JSON.parse(localStorage.getItem('tsColor')) || [];
+tshirt.addTshirt(tsColorInLlocal,iconImg,quantity);
+saveToLocalStorage();
+// console.log(tshirt);
+}
+
+
+
+function saveToLocalStorage() {
+
+  let tShirtInCart = JSON.stringify(tshirt.design);
+  localStorage.setItem('t-shirtInCart',tShirtInCart);
+};
+
+
+
+
+
+Tshirt.prototype.removeItem = function(index) {
   
-
-  let cartContent = JSON.stringify(cart.items);
-  localStorage.setItem('cart',cartContent);
-};
-
-Cart.prototype.removeItem = function(item) {
-  
-  this.items.splice(item,1);
-
-
-
+  this.design.splice(index,1);
 
 };
 
-const CartItem = function(product, quantity) {
-  this.product = product;
-  this.quantity = quantity;
-};
+
+
 
 

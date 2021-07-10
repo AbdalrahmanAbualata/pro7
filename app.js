@@ -27,24 +27,28 @@ function render() {
 
     imgContainer.appendChild(imgEl);
   }
-
+  let icons = JSON.stringify(imgFile);
+  localStorage.setItem("icons", icons);
 }
 render();
 
 console.log(imgContainer);
 imgContainer.addEventListener("click", goToCstmPage);
 
+let clickedicon='grunge.png';
+localStorage.setItem("clickedicon", clickedicon);
+
 function goToCstmPage(event) {
   console.log(event.target.id);
   let imgIndex = event.target.id
-  let clickedicon= JSON.stringify(imgFile[imgIndex]);
+   clickedicon= JSON.stringify(imgFile[imgIndex]);
   localStorage.setItem("clickedicon", clickedicon);
 
-  let icons = JSON.stringify(imgFile);
-  localStorage.setItem("icons", icons);
   location.href = "shirt.html";
 
 }
 
 // ********************************************************************************************************************
+
+
 
