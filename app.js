@@ -15,7 +15,7 @@
 // 
 // ************************************************************************************************************
 let imgContainer = document.getElementById("ob");
-let imgFile = ["ballon.png", "bekind.png", "pizza.png", "ltcu.jpg", 'grunge.png', 'Etcher.png'];
+let imgFile = ["ballon.png", "bekind.png", "pizza.png", "ltcu.jpg", 'grunge.png', 'Etcher.png','logo.jpg','logo2.jpeg','a123.png'];
 let imgEl;
 function render() {
   for (let i = 0; i < imgFile.length; i++) {
@@ -33,6 +33,7 @@ function render() {
 render();
 
 console.log(imgContainer);
+localStorage.setItem("clickedicon", 'Etcher.png');
 imgContainer.addEventListener("click", goToCstmPage);
 
 let clickedicon='grunge.png';
@@ -45,8 +46,13 @@ function goToCstmPage(event) {
   localStorage.setItem("clickedicon", clickedicon);
 
   location.href = "shirt.html";
-
+  
 }
+// let btnEl= document.getElementById('btn');
+// btnEl.addEventListener()
+// location.href = "shirt.html";
+
+
 
 // ********************************************************************************************************************
 

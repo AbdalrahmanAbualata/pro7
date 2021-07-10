@@ -3,14 +3,14 @@ let imgContainerEl = document.getElementById("closet");
 let changeColorContainer =document.getElementById('changeColor');
 let iconPlace = document.getElementById("shirrt");
 let iconsContenierEl=document.getElementById("icons")
-let icons=["ballon.png", "bekind.png", "pizza.png", "ltcu.jpg", 'grunge.png', 'Etcher.png']; 
+let icons=["ballon.png", "bekind.png", "pizza.png", "ltcu.jpg", 'grunge.png', 'Etcher.png','logo.jpg','logo2.jpeg','a123.png']; 
 let  iconImg;
 let  newIcon;
 let tsColorInLlocal ;
 localStorage.setItem("tsColor", '2.png');
 
 function placeIcon() {
- iconImg = JSON.parse(localStorage.getItem('clickedicon')) || [];
+ iconImg = JSON.parse(localStorage.getItem('clickedicon')) || ['grunge.png'];
      newIcon = document.createElement("img");
     newIcon.setAttribute("src", "images/" + iconImg);
     newIcon.setAttribute("class", "icon");
