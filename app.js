@@ -15,7 +15,7 @@
 // 
 // ************************************************************************************************************
 let imgContainer = document.getElementById("ob");
-let imgFile = ["ballon.png", "bekind.png", "pizza.png", "ltcu.jpg", 'grunge.png', 'Etcher.png','logo.jpg','logo2.jpeg','a123.png'];
+let imgFile = ["ballon.png", "bekind.png", "pizza.png", "ltcu.jpg", 'grunge.png', 'Etcher.png','logo.jpg','logo2.jpeg','a123 .png'];
 let imgEl;
 function render() {
   for (let i = 0; i < imgFile.length; i++) {
@@ -48,11 +48,15 @@ function goToCstmPage(event) {
   location.href = "shirt.html";
   
 }
-// let btnEl= document.getElementById('btn');
-// btnEl.addEventListener()
-// location.href = "shirt.html";
+let btnEl= document.getElementById('btn');
+btnEl.addEventListener("click",goto);
+function goto (){
+  let imgIndex =1;
+  clickedicon= JSON.stringify(imgFile[imgIndex]);
+ localStorage.setItem("clickedicon", clickedicon);
+location.href = "shirt.html";
 
-
+}
 
 // ********************************************************************************************************************
 
