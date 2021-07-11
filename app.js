@@ -27,13 +27,10 @@ function render() {
 
     imgContainer.appendChild(imgEl);
   }
-  let icons = JSON.stringify(imgFile);
-  localStorage.setItem("icons", icons);
+  
 }
 render();
 
-console.log(imgContainer);
-localStorage.setItem("clickedicon", 'Etcher.png');
 imgContainer.addEventListener("click", goToCstmPage);
 
 let clickedicon='grunge.png';

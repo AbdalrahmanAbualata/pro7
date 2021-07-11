@@ -7,7 +7,10 @@ let icons=["ballon.png", "bekind.png", "pizza.png", "ltcu.jpg", 'grunge.png', 'E
 let  iconImg;
 let  newIcon;
 let tsColorInLlocal ;
-localStorage.setItem("tsColor", '2.png');
+
+let abd= ['3.png'];
+tsColorInLlocal = JSON.stringify(abd[0]);
+  localStorage.setItem("tsColor", tsColorInLlocal);
 
 function placeIcon() {
  iconImg = JSON.parse(localStorage.getItem('clickedicon')) || [];
@@ -83,6 +86,8 @@ const Tshirt = function(design) {
 
 let tshirt = new Tshirt([]);
  tshirt.design = JSON.parse(localStorage.getItem('t-shirtInCart')) || [];
+
+ 
 Tshirt.prototype.addTshirt = function(tsColor,icon, quantity) {
 
   const newTshirt= new NewTshirtItem(tsColor,icon, quantity);
@@ -109,14 +114,11 @@ saveToLocalStorage();
 
 }
 
-
-
 function saveToLocalStorage() {
 
   let tShirtInCart = JSON.stringify(tshirt.design);
   localStorage.setItem('t-shirtInCart',tShirtInCart);
 };
-
 
 
 
