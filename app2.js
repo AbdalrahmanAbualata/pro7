@@ -10,16 +10,15 @@ let tsColorInLlocal ;
 localStorage.setItem("tsColor", '2.png');
 
 function placeIcon() {
-    iconImg = JSON.parse(localStorage.getItem('clickedicon')) || [];
-    newIcon = document.createElement("img");
+ iconImg = JSON.parse(localStorage.getItem('clickedicon')) || [];
+     newIcon = document.createElement("img");
     newIcon.setAttribute("src", "images/" + iconImg);
     newIcon.setAttribute("class", "icon");
 
     imgContainerEl.appendChild(newIcon);
-  } 
+  }
+  
 placeIcon();
-
-
 let imgs=[];
 let tsColor=[];
 for (let i = 2; i < 15; i++) {
@@ -42,7 +41,7 @@ function render(lengTh,imgFile,contenerName,changeClass) {
     
   }
 }
-// console.log(icons);
+
 render(imgs.length,imgs,changeColorContainer,'circle');
 render(icons.length,icons,iconsContenierEl,'icons');
 
@@ -75,15 +74,15 @@ function changIcon(event){
 }
 
 // *****************************************************************************************
-let btnEl=document.getElementById('submit');
+
 
 
 const Tshirt = function(design) {
   this.design = design;
 };
 
-const tshirt = new Tshirt([]);
-
+let tshirt = new Tshirt([]);
+ tshirt.design = JSON.parse(localStorage.getItem('t-shirtInCart')) || [];
 Tshirt.prototype.addTshirt = function(tsColor,icon, quantity) {
 
   const newTshirt= new NewTshirtItem(tsColor,icon, quantity);
@@ -100,14 +99,14 @@ const NewTshirtItem = function(tsColor,icon, quantity) {
 let formEl=document.getElementById('catalog');
 formEl.addEventListener('submit',  addTshirtToCart);
 
-  //  btnEl.addEventListener('click', addTshirtToCart);
+  
 function addTshirtToCart (event){
-  event.preventDefault();
- let quantity=event.target.quantity.value ;
-  tsColorInLlocal = JSON.parse(localStorage.getItem('tsColor')) || [];
+event.preventDefault();
+let quantity=event.target.quantity.value ;
+tsColorInLlocal = JSON.parse(localStorage.getItem('tsColor')) || [];
 tshirt.addTshirt(tsColorInLlocal,iconImg,quantity);
 saveToLocalStorage();
-// console.log(tshirt);
+
 }
 
 
@@ -122,11 +121,7 @@ function saveToLocalStorage() {
 
 
 
-Tshirt.prototype.removeItem = function(index) {
-  
-  this.design.splice(index,1);
 
-};
 
 
 

@@ -51,7 +51,7 @@ function goToCstmPage(event) {
 let btnEl= document.getElementById('btn');
 btnEl.addEventListener("click",goto);
 function goto (){
-  let imgIndex =1;
+  let imgIndex =2;
   clickedicon= JSON.stringify(imgFile[imgIndex]);
  localStorage.setItem("clickedicon", clickedicon);
 location.href = "shirt.html";
