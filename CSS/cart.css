@@ -205,3 +205,48 @@ label span {
   color: red;
   cursor: pointer;
 }
+/* ****************************************************************** */
+.openButton{
+  margin-left: 43%;
+  margin-top: 7%;
+  background-color: violet;
+       color: black;
+    font-weight: bolder;
+    border-radius: 5px;
+    box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+    text-decoration: none;
+    transform: 0.4s;
+}
+
+.button:hover{
+  background-color: blueviolet;
+  color: burlywood;
+}
+
+.popUpForm{
+    /* background-color: cornsilk; */
+   position: absolute;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+    z-index: 1;
+}
+
+#payForm{
+  height: 250px;
+  width: 500px;
+  background-color: cornsilk;
+  margin: 20px;
+  border-radius: 5px;
+  position: relative;
+
+}
+
+.closeBtn{
+  background-color: darkcyan;
+  position:absolute;
+    top:-15px;
+    right: -15px;
+}
