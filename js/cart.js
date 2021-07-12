@@ -36,7 +36,7 @@ for (let i = 0; i < tshirt.design.length; i++) {
    trEl=document.createElement('tr');
   tdEl = document.createElement('td');
    aEl =document.createElement('a');
-  aEl.setAttribute('id',`${i}`)
+  aEl.setAttribute('id',i)
   aEl.innerHTML='<i class="far fa-trash-alt"></i>';
   aEl.addEventListener('click', removeItemFromCart);
   tdEl.appendChild(aEl);
@@ -57,9 +57,6 @@ for (let i = 0; i < tshirt.design.length; i++) {
 
 
 function removeItemFromCart(event) {
-  
-  console.log(event.target.id);
-  event.preventDefault();
 removeItem(event.target.id) ;
 saveToLocalStorage();
 renderCart();
@@ -67,9 +64,10 @@ renderCart();
 
 
 function removeItem(index) {
-
+  console.log(tshirt.design);
+ 
     tshirt.design.splice(index,1);
-    console.log(tshirt);
+
   };
 
   
