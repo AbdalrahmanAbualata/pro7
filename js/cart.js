@@ -14,7 +14,6 @@ function loadCart() {
   tshirt.design = tShirtItems;
 }
 
-  //   console.log(tshirt);
 
 
 function renderCart() {
