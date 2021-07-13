@@ -79,6 +79,7 @@ function showCart() {
 
 function removeItemFromCart(event) {
   event.preventDefault();
+  deleteFromCounter();
   removeItem(event);
   saveToLocalStorage();
   renderCart();
@@ -101,15 +102,16 @@ let numOfItemInCart = JSON.parse(localStorage.getItem('numOfItemInCart')) || [];
 // let cartNavEl = document.getElementById("ss");
 // cartNavEl.textContent=`${numOfItemInCart}`;
 
-function addToCounter() {
+function deleteFromCounter() {
 
-  numOfItemInCart[0]++
+  numOfItemInCart[0]--;
 
   let numOfItemInCartInLocal = JSON.stringify(numOfItemInCart);
   localStorage.setItem('numOfItemInCart', numOfItemInCartInLocal);
 
-  cartNavEl.textContent=`${numOfItemInCart}`;
+  // cartNavEl.textContent=`${numOfItemInCart}`;
 }
+
 
 // ******************************************************************************************
 // mone
