@@ -15,7 +15,7 @@ function loadCart() {
 }
 
   //   console.log(tshirt);
-};
+
 
 function renderCart() {
   loadCart();
@@ -76,7 +76,7 @@ function removeItemFromCart(event) {
 
 function removeItem(event) {
   event.preventDefault();
-  tshirt.design.splice(Number(event.target.id),1);
+  tshirt.design.splice(Number(event.target.id), 1);
 }
 
 function saveToLocalStorage() {
