@@ -23,18 +23,17 @@ function renderCart() {
 };
 
 function clearCart() {
-  tbodyEl.textContent = "";
+  tbodyEl.textContent = "" ;
 };
 
 let trEl;
 let tdEl;
 let aEl;
-
+let sumOfQuantity = 0;
 
 function showCart() {
 
   for (let i in tshirt.design) {
-
     trEl = document.createElement("tr");
     tdEl = document.createElement("td");
     aEl = document.createElement("a");
@@ -68,18 +67,24 @@ function showCart() {
     let tdEl3 = document.createElement("td");
     tdEl3.textContent = `${tshirt.design[i].tsColor.split(".")[0]}`;
     trEl.appendChild(tdEl3);
+    // *************************************************************************
+    let tdEl6 = document.createElement("td");
+    
+    tdEl6.innerHTML = `10 <i class="fas fa-dollar-sign"></i>`;
+    trEl.appendChild(tdEl6);
+    // *******************************************************************************
     tbodyEl.appendChild(trEl);
+    sumOfQuantity=sumOfQuantity+Number( tshirt.design[i].quantity);
   }
+  let totalOfCartEl=document.getElementById('total');
+  totalOfCartEl.textContent=` Total price: ${sumOfQuantity*10}$`;
 }
-
-
-
-
 
 
 function removeItemFromCart(event) {
   event.preventDefault();
   deleteFromCounter();
+  sumOfQuantity = 0;
   removeItem(event);
   saveToLocalStorage();
   renderCart();
@@ -87,7 +92,7 @@ function removeItemFromCart(event) {
 
 function removeItem(event) {
   event.preventDefault();
-  tshirt.design.splice(Number(event.target.id), 1);
+  tshirt.design.splice(Number(event.target.id),1);
 }
 
 function saveToLocalStorage() {
@@ -105,7 +110,10 @@ let numOfItemInCart = JSON.parse(localStorage.getItem('numOfItemInCart')) || [];
 function deleteFromCounter() {
 
   numOfItemInCart[0]--;
+if (numOfItemInCart==0){
+  numOfItemInCart='';
 
+}
   let numOfItemInCartInLocal = JSON.stringify(numOfItemInCart);
   localStorage.setItem('numOfItemInCart', numOfItemInCartInLocal);
 
