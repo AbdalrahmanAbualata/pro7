@@ -69,9 +69,8 @@ function changeColor (event){
   localStorage.setItem("tsColor", tsColorInLlocal);
 
   placeIcon();
-  }
 }
-
+}
 
 changeColorContainerGirl.addEventListener("click", changeColorGirl);
 
@@ -87,7 +86,7 @@ function changeColorGirl (event){
   localStorage.setItem("tsColor", tsColorInLlocal);
 
   placeIcon();
-  }
+}
 }
 
 
@@ -97,9 +96,10 @@ function changIcon(event){
   if (event.target.id !=='icons'){
   let clickedicon= JSON.stringify(icons[event.target.id]);
   localStorage.setItem("clickedicon", clickedicon);
-  }
+ 
   newIcon.remove();
   placeIcon();
+  }
 }
 
 // *****************************************************************************************

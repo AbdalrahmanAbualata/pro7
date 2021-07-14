@@ -25,6 +25,7 @@ function goToCstmPage(event) {
   let imgIndex = event.target.id
   let clickedicon = JSON.stringify(imgFile[imgIndex]);
   localStorage.setItem("clickedicon", clickedicon);
+
   location.href = "shirt.html";
   }
 }
